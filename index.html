@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!--
+	Shopping List App
+
+    Author: Ahmad M. Osman
+    File name: index.html
+
+    CS 330: Internet Programming - Dr. Brad Miller
+-->
+
+<html lang="en">
+
+<head>
+    <title>Shopping List</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Shopping List Application">
+    <meta name="author" content="Ahmad M. Osman">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Shopping List</h1>
+        <hr>
+        <div class="jumbotron">
+            <form id="myForm">
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="itemName">Item</label>
+                        <input class="form-control" id="itemName" type="text" placeholder="Cheetos" name="itemName" required>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="itemQty">Quantity</label>
+                        <select class="form-control" id="itemQty" type="select" placeholder="How many?" name="itemQty" required>
+                            <option value disabled selected>How many?</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="itemPriority">Priority</label>
+                        <select class="form-control" id="itemPriority" type="select" placeholder="How urgent?" name="itemPriority" required>
+                            <option value disabled selected>How urgent?</option>
+                            <option value="Low">Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                        <label for="itemStore">Store</label>
+                        <select class="form-control" id="itemStore" type="select" placeholder="Where to buy?" name="itemStore" required>
+                            <option value disabled selected>Where to buy?</option>
+                            <option value="Walmart">Walmart</option>
+                            <option value="Fareway">Fareway</option>
+                            <option value="Caseys">Caseys</option>
+                            <option value="Target">Target</option>
+                            <option value="Co-op">Co-op</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="itemSection">Section</label>
+                        <select class="form-control" id="itemSection" name="itemSection" type="select" placeholder="Which section?" required>
+                            <option value disabled selected>Which section?</option>
+                            <option value="Meats">Meats</option>
+                            <option value="Frozen Food">Frozen Food</option>
+                            <option value="Canned Goods">Canned Goods</option>
+                            <option value="Cereal">Cereal</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Tools">Tools</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="itemPrice">Price</label>
+                        <input type="number" class="form-control" id="itemPrice" name="itemPrice" placeholder="How much?" step="1.0" min="0" required>
+                    </div>
+                </div>
+                <button name="addItem" type="button" id="addItem" onclick="clickedOn()" class="btn">Add Item</button>
+            </form>
+        </div>
+        <div class="col-md-12">
+            <table id="itemsList" class="table table-hover">
+                <thead class="thead">
+                    <tr>
+                        <th>
+                            <i>&#10004;</i>
+                        </th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Store</th>
+                        <th scope="col">Section</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody id="itemsListBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>
