@@ -1,11 +1,5 @@
-.container {
-    margin-top: 2em;
-}
-
-h1 {
-    text-align: center;
-    color: #494E6B;
-    opacity: 0.8;
+body {
+    background: #D9D9D9;
 }
 
 hr {
@@ -13,14 +7,99 @@ hr {
     border-color: #D9D9D9;
 }
 
-.jumbotron {
-    background-color: #494E6B !important;
-    opacity: 0.7;
-}
-
 label {
     color: #D9D9D9;
     font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    position: relative;
+    padding: 5px 10px;
+}
+
+.container {
+    margin-top: 2em;
+}
+
+.jumbotron {
+    background-color: rgb(21, 26, 56) !important;
+    opacity: 0.7;
+}
+
+.thead {
+    background-color: rgb(21, 26, 56) !important;
+    opacity: 0.7;
+    color: #D9D9D9;
+}
+
+.form-control {
+    color: black;
+}
+
+.form-control:focus {
+    color: black;
+}
+
+.itemcheckbox {
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin: 0px auto;
+    float: left;
+}
+
+.Low {
+    background-color: lightgreen;
+    opacity: 0.8;
+}
+
+.Medium {
+    background-color: lightsalmon;
+    opacity: 0.8;
+}
+
+.High {
+    background-color: lightcoral;
+    opacity: 0.9;
+}
+
+tr.removed td:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    border-bottom: 1px solid #111;
+    width: 100%;
+}
+
+.form-control::-webkit-input-placeholder {
+    color: black;
+}
+
+.form-control:-moz-placeholder {
+    color: black;
+}
+
+.form-control::-moz-placeholder {
+    color: black;
+}
+
+.form-control:-ms-input-placeholder {
+    color: black;
+}
+
+.form-control::-ms-input-placeholder {
+    color: black;
+}
+
+#appname {
+    text-align: center;
+    color: rgb(21, 26, 56);
+    opacity: 0.8;
 }
 
 #addItem {
@@ -28,21 +107,5 @@ label {
     text-align: center;
     float: right;
     border-radius: 8px;
-}
-
-.thead {
-    background-color: #494E6B !important;
-    opacity: 0.7;
-    color: #D9D9D9;
-}
-
-.checkBoxClass {
-    width: 40px;
-    height: 40px;
-    display: block;
-    margin: 0px auto;
-}
-
-.form-control {
-    color: black;
+    background-color: white;
 }
