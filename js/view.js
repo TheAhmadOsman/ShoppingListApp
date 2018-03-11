@@ -19,17 +19,18 @@ class View {
 
     addRow(table, item) {
         let row = document.createElement("tr")
+        row.setAttribute("scope", "row")
         row.classList.add(item.priority)
 
         let checkBox = document.createElement("input")
         checkBox.type = "checkbox"
         checkBox.classList.add("form-control")
         checkBox.classList.add("itemcheckbox")
-        
+
         checkBox.onclick = function () {
             item.purchased = !item.purchased;
         };
-        
+
         if (item.purchased) {
             checkBox.checked = true;
         }

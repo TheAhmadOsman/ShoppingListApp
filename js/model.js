@@ -36,7 +36,7 @@ class Item extends Subject {
         this.priority = priority;
         this.store = store;
         this.section = section;
-        
+
         this._purchased = false;
     }
 
@@ -60,6 +60,8 @@ class ShoppingList extends Subject {
     constructor() {
         super()
         this.items = [];
+        this.arrangedBy = null;
+        this.ascending = false;
     }
 
     addItem(newItem) {
@@ -81,5 +83,29 @@ class ShoppingList extends Subject {
         let index = this.items.indexOf(item)
         this.items.splice(index, 1)
         this.publish("Deleted item: " + item.item + " with index " + index + ".", this)
+    }
+
+    arrange(column) {
+        column = column.toLowerCase();
+
+        if (this.arrangedBy == column) {
+            this.ascending = !this.ascending;
+        } else {
+            this.arrangedBy = column;
+            this.ascending = true;
+        }
+
+        let self = this;
+
+        function compare(item1, item2) {
+            if (self.ascending) {
+                return item1[column] < item2[column];
+            } else {
+                return item1[column] > item2[column];
+            }
+        }
+
+        this.items.sort(compare);
+        this.publish("The shopping list has been sorted.", this);
     }
 }

@@ -10,17 +10,22 @@ function clickedOn() {
     let emptyField = false;
     for (let id of rowIDs) {
         values[id] = document.getElementById(id).value;
-        if(values[id] === "") {
+        if (values[id] === "") {
             emptyField = true;
             alertify.alert('Empty Field', 'Please make sure you fill in all fields!');
             break;
         }
     }
 
-    if(emptyField == false) {
+    if (emptyField == false) {
         let item = new Item(values["itemName"], values["itemQty"],
             values["itemPriority"], values["itemStore"],
             values["itemSection"], values["itemPrice"]);
         myShoppingList.addItem(item);
-     }
+    }
 }
+
+$(document).on('click', 'th', function () {
+    myShoppingList.arrange($(this).text())
+    console.log("Arranging by: ", $(this).text())
+})

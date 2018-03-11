@@ -4,7 +4,7 @@ body {
 
 hr {
     display: block;
-    border-color: #D9D9D9;
+    border-color: rgb(21, 26, 56);
 }
 
 label {
@@ -53,18 +53,18 @@ td {
 }
 
 .Low {
-    background-color: lightgreen;
+    background-color: #00C851;
     opacity: 0.8;
 }
 
 .Medium {
-    background-color: lightsalmon;
+    background-color: #ffbb33;
     opacity: 0.8;
 }
 
 .High {
-    background-color: lightcoral;
-    opacity: 0.9;
+    background-color: #ff4444;
+    opacity: 0.8;
 }
 
 tr.removed td:before {
