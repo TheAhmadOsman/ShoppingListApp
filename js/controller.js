@@ -23,7 +23,7 @@ function clickedOn() {
             .value;
         if (values[id] === "") {
             emptyField = true;
-            alertify.alert('Empty Field', 'Please make sure you fill in all fields!');
+            alertify.alert('Empty Field', 'Please make sure all fields are filled.');
             break;
         }
     }
