@@ -1,15 +1,26 @@
 "use strict";
 
-var myShoppingList = new ShoppingList()
-var view = new View(myShoppingList)
+var myShoppingList = new ShoppingList();
+var view = new View(myShoppingList);
+var saved = new LocalStorageSaver(myShoppingList, "shoppingList");
 
 function clickedOn() {
-    "use strict";
-    let rowIDs = ["itemName", "itemQty", "itemPriority", "itemStore", "itemSection", "itemPrice"];
+    let rowIDs = [
+        "itemName",
+        "itemQty",
+        "itemPriority",
+        "itemStore",
+        "itemSection",
+        "itemPrice"
+    ];
+
     let values = {}
     let emptyField = false;
+
     for (let id of rowIDs) {
-        values[id] = document.getElementById(id).value;
+        values[id] = document
+            .getElementById(id)
+            .value;
         if (values[id] === "") {
             emptyField = true;
             alertify.alert('Empty Field', 'Please make sure you fill in all fields!');
@@ -18,14 +29,13 @@ function clickedOn() {
     }
 
     if (emptyField == false) {
-        let item = new Item(values["itemName"], values["itemQty"],
-            values["itemPriority"], values["itemStore"],
-            values["itemSection"], values["itemPrice"]);
+        let item = new Item(values["itemName"], values["itemQty"], values["itemPriority"], values["itemStore"], values["itemSection"], values["itemPrice"]);
         myShoppingList.addItem(item);
     }
 }
 
-$(document).on('click', 'th', function () {
-    myShoppingList.arrange($(this).text())
-    console.log("Arranging by: ", $(this).text())
-})
+$(document)
+    .on('click', 'th', function () {
+        myShoppingList.arrange($(this).text())
+        console.log("Arranging by: ", $(this).text())
+    })

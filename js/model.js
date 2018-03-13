@@ -14,18 +14,21 @@ class Subject {
     }
 
     subscribe(fn) {
-        this.handlers.push(fn);
+        this
+            .handlers
+            .push(fn);
     }
 
     unsubscribe(fn) {
-        this.handlers = this.handlers.filter(function (someobj) {
-            if (someobj !== fn) {
-                return someobj;
-            }
-        })
+        this.handlers = this
+            .handlers
+            .filter(function (someobj) {
+                if (someobj !== fn) {
+                    return someobj;
+                }
+            })
     }
 }
-
 
 class Item extends Subject {
     constructor(item, quantity, priority, store, section, price) {
@@ -65,7 +68,9 @@ class ShoppingList extends Subject {
     }
 
     addItem(newItem) {
-        this.items.push(newItem);
+        this
+            .items
+            .push(newItem);
         let self = this;
         newItem.subscribe(function (a, b) {
             self.publish('Item will be deleted in 2 seconds.', self)
@@ -80,8 +85,12 @@ class ShoppingList extends Subject {
     }
 
     deleteItem(item) {
-        let index = this.items.indexOf(item)
-        this.items.splice(index, 1)
+        let index = this
+            .items
+            .indexOf(item)
+        this
+            .items
+            .splice(index, 1)
         this.publish("Deleted item: " + item.item + " with index " + index + ".", this)
     }
 
@@ -105,7 +114,9 @@ class ShoppingList extends Subject {
             }
         }
 
-        this.items.sort(compare);
+        this
+            .items
+            .sort(compare);
         this.publish("The shopping list has been sorted.", this);
     }
 }

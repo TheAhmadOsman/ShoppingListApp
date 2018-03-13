@@ -20,12 +20,18 @@ class View {
     addRow(table, item) {
         let row = document.createElement("tr")
         row.setAttribute("scope", "row")
-        row.classList.add(item.priority)
+        row
+            .classList
+            .add(item.priority)
 
         let checkBox = document.createElement("input")
         checkBox.type = "checkbox"
-        checkBox.classList.add("form-control")
-        checkBox.classList.add("itemcheckbox")
+        checkBox
+            .classList
+            .add("form-control")
+        checkBox
+            .classList
+            .add("itemcheckbox")
 
         checkBox.onclick = function () {
             item.purchased = !item.purchased;
@@ -39,13 +45,22 @@ class View {
         rowItem.appendChild(checkBox)
         row.appendChild(rowItem)
 
-        let ids = ["item", "quantity", "priority", "store", "section", "price"]
+        let ids = [
+            "item",
+            "quantity",
+            "priority",
+            "store",
+            "section",
+            "price"
+        ]
 
         for (let id of ids) {
             let rowItem = document.createElement("td")
             rowItem.innerHTML = item[id]
             if (item.purchased == true) {
-                row.classList.add("removed")
+                row
+                    .classList
+                    .add("removed")
             }
             row.appendChild(rowItem)
         }
