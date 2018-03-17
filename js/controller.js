@@ -34,6 +34,10 @@ function clickedOn() {
     }
 }
 
+function clearList() {
+    myShoppingList.clearList();
+}
+
 $(document)
     .on('click', 'th', function () {
         myShoppingList.arrange($(this).text())

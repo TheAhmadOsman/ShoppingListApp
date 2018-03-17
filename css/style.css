@@ -110,3 +110,11 @@ tr.removed td:before {
     border-radius: 8px;
     background-color: white;
 }
+
+#clear {
+    padding: 4px 24px;
+    text-align: center;
+    float: left;
+    border-radius: 8px;
+    background-color: white;
+}

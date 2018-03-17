@@ -119,4 +119,9 @@ class ShoppingList extends Subject {
             .sort(compare);
         this.publish("The shopping list has been sorted.", this);
     }
+
+    clearList() {
+        this.items = [];
+        this.publish("The shopping list has been emtpied", this);
+    }
 }
