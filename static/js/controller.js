@@ -2,7 +2,7 @@
 
 var myShoppingList = new ShoppingList();
 var view = new View(myShoppingList);
-var saved = new LocalStorageSaver(myShoppingList, "shoppingList");
+var saved = new Storage(myShoppingList, "shoppingList");
 
 function clickedOn() {
     let rowIDs = [
