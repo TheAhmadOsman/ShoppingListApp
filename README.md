@@ -46,7 +46,7 @@ Shopping List App                           | Shopping List App
 
 ## Usage :video_game:
 
-This web app is written in **Python 3.6** using **Flask** Web Framework. Frontend uses **Bootstrap** Framework. Local Storage version uses **Java Script**.
+This web app is written in **Python 3.6** using **Flask** Web Framework. Frontend uses **Bootstrap** Framework. Local Storage version uses **Javascript**.
 
 ### Cloning and Virtual Environment
 
