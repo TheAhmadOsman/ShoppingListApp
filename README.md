@@ -34,6 +34,7 @@ Currently, Shopping List App, both Back End and Local Storage implementations, s
   * Price
 * Removing Specific Item(s)
 * Clearing List
+* User Session
 
 ## :camera: Demo and Screenshots :video_camera:
 
